@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashavatar of Vishnu</title>
+  <style>
+    body {
+      font-family: 'StoryBook', sans-serif;
+      background-color: #0096C7;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 15px;
+    }
+    .card-title {
+      font-size: 1.2em;
+      color: #34495e;
+      margin: 0 0 10px 0;
+      text-align: center;
+    }
+    .card-details {
+      display: none;
+      font-size: 0.95em;
+      color: #555;
+    }
+    .card-details p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Dashavatar of Lord Vishnu</h1>
+
+  <div class="container">
+    <!-- Avatars will be inserted here -->
+  </div>
+
+  <script>
+    const avatars = [
+      {
+        name: "1. Matsya (The Fish)",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.peakpx.com%2Fen%2Fhd-wallpaper-desktop-wgngf&psig=AOvVaw3TrX-DUiypfPDO6ylww_0p&ust=1757227690163000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKDEi77Fw48DFQAAAAAdAAAAABAL",
+        yug: "Satya Yuga",
+        objective: "To save the Vedas from demon Hayagriva",
+        event: "Guided Manu's boat during the great flood",
+        significant_character: "King Manu"
+      },
+      {
+        name: "2. Kurma (The Tortoise)",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fdharohar.hargharpuja.com%2Flord-vishnu-kurma-avatar%2F5548&psig=AOvVaw28Kj1XdflGtd99Zk9Sut3u&ust=1757227764311000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCNjyuOTFw48DFQAAAAAdAAAAABAE",
+        yug: "Satya Yuga",
+        objective: "To support Mount Mandara during Samudra Manthan",
+        event: "Helped Devas and Asuras churn the ocean",
+        significant_characters: "Mahadev, Vashuki, Svarbhanu"
+      },
+      {
+        name: "3. Varaha (The Boar)",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fshriprasadam.online%2Fblogs%2Fnews%2F10-avatars-of-vishnu-in-order-dashavatar-list%3Fsrsltid%3DAfmBOopApcmk0XjZiYo-OKGkxa_vpWacYK1_ljwPPR9JSSYZij9uc4y8&psig=AOvVaw3sZuTMJlAQA6AzVaMsUuED&ust=1757224183913000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCNCp47u4w48DFQAAAAAdAAAAABAE",
+        yug: "Satya Yuga",
+        objective: "To rescue Earth (Bhudevi) from demon Hiranyaksha",
+        event: "Lifted Earth from the ocean",
+        villain: "Hiranyaksha"
+      },
+      {
+        name: "4. Narasimha (The Man-Lion)",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Narasimha.jpg/300px-Narasimha.jpg",
+        yug: "Satya Yuga",
+        objective: "To destroy demon king Hiranyakashipu",
+        event: "Appeared from pillar and killed Hiranyakashipu",
+        villain: "Hiranyakashipu",
+        significant_character: "Prahlad"
+      },
+      {
+        name: "5. Vamana (The Dwarf)",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fin.pinterest.com%2Fpin%2F87186942778751044%2F&psig=AOvVaw18jmnB8c4TRZsG-4vLerkP&ust=1757227815869000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCLCt2_TFw48DFQAAAAAdAAAAABAE",
+        yug: "Treta Yuga",
+        objective: "To restore Indra's authority over heaven",
+        event: "Took 3 steps and covered the universe",
+        villain: "Maha Bali's arrogance",
+        significant_character: "MahaBali"
+      },
+      {
+        name: "6. Parashurama (The Warrior Sage), also a chiranjivi",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2FAskAnshul%2Fphotos%2Ftoday-is-lord-parshurama-janmotsavhe-is-the-sixth-avatar-of-lord-vishnuhe-lived-%2F934956903644501%2F&psig=AOvVaw3dNWaVBFRAvvp5nrUgpRv5&ust=1757227869382000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCOCR7ZnGw48DFQAAAAAdAAAAABAL",
+        yug: "Treta Yuga",
+        objective: "To rid the world of corrupt Kshatriyas",
+        event: "Defeated evil kings 21 times",
+        main_villain: "Sahastrabahu",
+        significant_characters: "Sage Jamadagni, Shri Ram, Shri Krishna, Kalki avatar"
+      },
+      {
+        name: "7. Rama (The Prince of Ayodhya)",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bhagavatam-katha.com%2Framayana-story-surya-and-moon-desire-to-see-lord-rama%2F&psig=AOvVaw36bTU-_0V80KnkshNossDV&ust=1757227980634000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPDOvMfGw48DFQAAAAAdAAAAABAf",
+        yug: "Treta Yuga",
+        objective: "To destroy Ravana and uphold dharma",
+        event: "Rescued Sita and ruled righteously",
+        main_villain: "Ravana",
+        significant_characters: "Hanuman, Laxman, Mata Sita, Jambavan, Bali, Sugreev, Angad, Kumbhakarna, Indrajeet, Vibhishana"
+      },
+      {
+        name: "8. Vasudev Krishna (The Divine Statesman)",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.deviantart.com%2Fharshdluffy%2Fart%2FLORD-KRISHNA-ANIME-HINDU-GOD-1040544190&psig=AOvVaw0WLN8bCar1_kDRAqEOurf0&ust=1757228132442000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKif5IfHw48DFQAAAAAdAAAAABAf",
+        yug: "Dvapara Yuga",
+        objective: "To guide Arjuna and destroy evil like Kansa",
+        event: "Delivered Bhagavad Gita, ended Mahabharata war",
+        main_villain: "Kansa, Jarasandha",
+        significant_characters: "Shri Radha, Balaram, Kuru clan, Shishupal, Dantavakra, Jambavan"
+      },
+      {
+        name: "9. Buddha (The Enlightened One)",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fsakshizion.com%2F%3Fp%3D1725&psig=AOvVaw25d9rOoBN7BdKnXQtnZAOw&ust=1757228240884000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCODQwsfHw48DFQAAAAAdAAAAABAL",
+        yug: "Kali Yuga",
+        objective: "To teach compassion and non-violence",
+        event: "Founded Buddhism, challenged animal sacrifices",
+        significant_characters: "King Suddhodana, Queen Maya, Mahapajapati, Yasodhara, son Rahula, chariot-driver, Channa, Alara Kalama, Uddaka Ramaputta"
+      },
+      {
+        name: "10. Kalki (The Future Warrior)",
+        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.moneycontrol.com%2Freligion%2Fkalki-avatar-vishnu-the-untold-story-of-kalki-the-10th-avatar-of-lord-vishnu-visual-story-2178869.html&psig=AOvVaw3feqaM2DdayMVuHG2jfcdn&ust=1757228317352000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPDs3t_Hw48DFQAAAAAdAAAAABAL",
+        yug: "End of Kali Yuga",
+        objective: "To destroy evil and restore righteousness",
+        event: "Will appear riding a white horse with a sword",
+        main_villain: "Kali Asur",
+        significant_characters: "Chiranjivis, Kali's army"
+      }
+    ];
+
+    const container = document.querySelector('.container');
+
+    avatars.forEach(avatar => {
+      const card = document.createElement('div');
+      card.className = 'card';
+
+      card.innerHTML = `
+        <img src="${avatar.image}" alt="${avatar.name}">
+        <div class="card-content">
+          <h3 class="card-title">${avatar.name}</h3>
+          <div class="card-details">
+            <p><strong>Yug:</strong> ${avatar.yug}</p>
+            <p><strong>Objective:</strong> ${avatar.objective}</p>
+            <p><strong>Main Event:</strong> ${avatar.event}</p>
+          </div>
+        </div>
+      `;
+
+      card.addEventListener('click', () => {
+        const details = card.querySelector('.card-details');
+        details.style.display = (details.style.display === 'block') ? 'none' : 'block';
+      });
+
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>
